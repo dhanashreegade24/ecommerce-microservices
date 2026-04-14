@@ -16,6 +16,7 @@ public class ProductController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> Get()
     {
+        // Test commit to check manually pushing to GitHub Dev Branch from local repository
         try
         {
             var conn = HttpContext.RequestServices
