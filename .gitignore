@@ -1,0 +1,11 @@
+# Ignore large files
+*.tar
+*.zip
+
+# .NET
+bin/
+obj/
+.vs/
+
+# logs
+*.log
