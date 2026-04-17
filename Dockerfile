@@ -19,8 +19,3 @@ COPY https/aspnetapp.pfx /https/aspnetapp.pfx
 ENV ASPNETCORE_URLS=http://+:8080
 
 ENTRYPOINT ["dotnet", "ProductService.dll"]
-
-- name: Build Docker Image
-  run: |
-    cd src/ProductService
-    docker build -t dhanashreegade/productservice:${{ github.sha }} .
