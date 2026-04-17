@@ -33,7 +33,6 @@ jobs:
           echo "${{ secrets.KUBECONFIG }}" > kubeconfig
       
       - name: Deploy to Kubernetes
-        #if: false   # ❌ temporarily disable
         run: |
             echo "Skipping deploy, Will configure later"
 
