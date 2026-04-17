@@ -1,4 +1,4 @@
-name: CI/CD Pipeline
+﻿name: CI/CD Pipeline
 
 on:
   push:
@@ -28,7 +28,6 @@ jobs:
     - name: Push Docker Image
       run: |
         docker push dhanashreegade/productservice:${{ github.sha }}
-
     - name: Set Kubeconfig
       run: |
         echo "${{ secrets.KUBECONFIG }}" > kubeconfig
@@ -39,12 +38,12 @@ jobs:
         productservice=dhanashreegade/productservice:${{ github.sha }} -n dev
 
     - name: Deploy to Kubernetes
-  run: |
-    if [[ "${{ github.ref }}" == "refs/heads/dev" ]]; then
-      NAMESPACE=dev
-    else
-      NAMESPACE=stage
-    fi
+      run: |
+        if [[ "${{ github.ref }}" == "refs/heads/dev" ]]; then
+          NAMESPACE=dev
+        else
+          NAMESPACE=stage
+        fi
 
-    kubectl --kubeconfig=kubeconfig set image deployment/productservice \
-    productservice=dhanashreegade/productservice:${{ github.sha }} -n $NAMESPACE
+        kubectl --kubeconfig=kubeconfig set image deployment/productservice \
+        productservice=dhanashreegade/productservice:${{ github.sha }} -n $NAMESPACE
