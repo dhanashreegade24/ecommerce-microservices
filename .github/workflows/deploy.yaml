@@ -37,8 +37,8 @@ jobs:
             echo "Skipping deploy, Will configure later"
 
 
-            kubectl --kubeconfig=kubeconfig set image deployment/productservice \
-              productservice=dhanashreegade/productservice:${{ github.sha }} -n dev
+        #kubectl --kubeconfig=kubeconfig set image deployment/productservice \
+        #      productservice=dhanashreegade/productservice:${{ github.sha }} -n dev
 
       #    kubectl --kubeconfig=kubeconfig set image deployment/productservice \
       #    productservice=dhanashreegade/productservice:${{ github.sha }} -n $NAMESPACE
