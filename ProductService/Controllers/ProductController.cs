@@ -16,6 +16,7 @@ public class ProductController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> Get()
     {
+        //test code to check cicd pipeline execution in the pipeline
         try
         {
             var conn = HttpContext.RequestServices
