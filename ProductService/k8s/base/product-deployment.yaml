@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: productservice
-        image: dhanashreegade/productservice:v1 ## Kubernetes may NOT pull new image automatically.
+        image: dhanashreegade/productservice:latest    # this is (commented, right side) old before CICD, manual deployment dhanashreegade/productservice:v1 ## Kubernetes may NOT pull new image automatically.
         imagePullPolicy: Always ## Use this line to force Kubernetes to use the local image. Remove it when you push the image to a registry.
         ports:
         - containerPort: 8080
