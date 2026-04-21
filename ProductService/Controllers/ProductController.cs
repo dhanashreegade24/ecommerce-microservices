@@ -42,4 +42,10 @@ public class ProductController : ControllerBase
         await _service.AddProduct(dto);
         return Ok();
     }
+
+    [HttpGet("test")]
+    public IActionResult GetTest()
+    {
+        return Ok("New API working");
+    }
 }
